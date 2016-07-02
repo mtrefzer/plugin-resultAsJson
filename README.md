@@ -20,6 +20,11 @@ Add the following section to your `phpmussel.ini` file and edit accordingly:
 [resultAsJson]
 ; Output the result as JSON, default = false
 use_json=true
+; If this value is set, the plugin checks if a request parameter with this name exists. 
+; Finding the parameter, the json output is sent. If the parameter is missing
+; the usual html response is sent.
+; If this value is empty, always json is used for the response.
+use_json_flag='phpmussel'
 ```
 
 Upload the "resultAsJson" directory of this repository and all its contents to the "plugins" directory of your phpMussel installation (the "plugins" directory is a sub-directory of the "vault" directory).
