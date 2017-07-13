@@ -43,7 +43,7 @@ $phpMussel['Register_Hook']('phpMussel_resultAsJson', 'before_html_out');
 /**
  * @return bool Returns always true, because only Headers are set and the html output is changed
  */
-$phpMussel_resultAsJson = function () use (&$phpMussel, &$html) {
+$phpMussel_resultAsJson = function () use (&$phpMussel) {
     if ($phpMussel['Config']['resultAsJson']['use_json'] &&
         (strlen($phpMussel['Config']['resultAsJson']['use_json_flag']) == 0
             || isset($_REQUEST[$phpMussel['Config']['resultAsJson']['use_json_flag']]))
@@ -58,7 +58,7 @@ $phpMussel_resultAsJson = function () use (&$phpMussel, &$html) {
         header('Cache-Control: no-cache, must-revalidate');
         header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
         header('Content-type: application/json');
-        $html = json_encode($content);
+        $phpMussel['HTML'] = json_encode($content);
     }
     return true;
 };
