@@ -5,12 +5,12 @@
  * PLUGIN INFORMATION BEGIN
  *         Plugin Name: resultAsJson.
  *       Plugin Author: Michael Trefzer.
- *      Plugin Version: 1.0.0
+ *      Plugin Version: 1.0.1
  *    Download Address: https://github.com/mtrefzer/plugin-resultAsJson
  *     Min. Compatible: 1.0.0-DEV
  *     Max. Compatible: -
  *        Tested up to: 1.0.0-DEV
- *       Last Modified: 2016.06.29
+ *       Last Modified: 2017.07.13
  * PLUGIN INFORMATION END
  *
  * This plugin sends the detection data as JSON response.
