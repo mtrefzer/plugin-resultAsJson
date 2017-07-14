@@ -5,12 +5,12 @@
  * PLUGIN INFORMATION BEGIN
  *         Plugin Name: resultAsJson.
  *       Plugin Author: Michael Trefzer.
- *      Plugin Version: 1.0.0
+ *      Plugin Version: 1.0.1
  *    Download Address: https://github.com/mtrefzer/plugin-resultAsJson
  *     Min. Compatible: 1.0.0-DEV
  *     Max. Compatible: -
  *        Tested up to: 1.0.0-DEV
- *       Last Modified: 2016.06.29
+ *       Last Modified: 2017.07.13
  * PLUGIN INFORMATION END
  *
  * This plugin sends the detection data as JSON response.
@@ -43,7 +43,7 @@ $phpMussel['Register_Hook']('phpMussel_resultAsJson', 'before_html_out');
 /**
  * @return bool Returns always true, because only Headers are set and the html output is changed
  */
-$phpMussel_resultAsJson = function () use (&$phpMussel, &$html) {
+$phpMussel_resultAsJson = function () use (&$phpMussel) {
     if ($phpMussel['Config']['resultAsJson']['use_json'] &&
         (strlen($phpMussel['Config']['resultAsJson']['use_json_flag']) == 0
             || isset($_REQUEST[$phpMussel['Config']['resultAsJson']['use_json_flag']]))
@@ -58,7 +58,7 @@ $phpMussel_resultAsJson = function () use (&$phpMussel, &$html) {
         header('Cache-Control: no-cache, must-revalidate');
         header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
         header('Content-type: application/json');
-        $html = json_encode($content);
+        $phpMussel['HTML'] = json_encode($content);
     }
     return true;
 };

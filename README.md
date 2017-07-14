@@ -8,7 +8,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 This repository, "plugin-resultAsJson", is the repository for a phpMussel plugin that allows you receive the detection output in JSON format.
 
-The core phpMussel repository: [phpMussel](https://github.com/Maikuolan/phpMussel).
+The core phpMussel repository: [phpMussel](https://github.com/phpMussel/phpMussel).
 
 ---
 
@@ -46,4 +46,4 @@ That's everything! :-)
 
 ---
 
-*This file, "README.md", last edited: 29th June 2016 (2016.06.29).*
+*Last modified: 13 July 2017 (2017.07.13).*
